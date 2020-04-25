@@ -1,0 +1,17 @@
+$base-color: #ffcdb2;
+$button-color: #ffb4a2;
+$font-color: #6d6875;
+$border-color: #b5838d;
+$secondary-color: #b5838d;
+$bp: 900px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo Paaji 2", cursive;
+  overflow-x: hidden;
+}

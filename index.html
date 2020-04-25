@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3f803eb446.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header__logo"><i class="far fa-calendar fa-2x"></i></div>
+            <div class="header__title">
+                <h1>personal calendar</h1>
+            </div>
+        </div>
+
+        <main class="calendar">
+            <div class="calendar__header">
+                <div class="calendar__navigation-buttons">
+                    <div class="calendar__toggle">
+                        <a href="#" id="backward"><i class="fas fa-angle-left"></i></a>
+                        <a href="#" id="forward"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                    <a href="#" id="today-button">today</a>
+                </div>
+                <div class="month-year">
+                    <h2>March 2020</h2>
+                </div>
+            </div>
+            <div class="calendar__week">
+                <div class="calendar__days">monday</div>
+                <div class="calendar__days">tuesday</div>
+                <div class="calendar__days">wednesday</div>
+                <div class="calendar__days">thursday</div>
+                <div class="calendar__days">friday</div>
+                <div class="calendar__days">sunday</div>
+                <div class="calendar__days">saturday</div>
+            </div>
+            <div class="calendar__table"></div>
+        </main>
+        <section class="side-menu">
+            <div class="side-menu__content">
+                <div class="side-menu__choosen-day">
+                    <h3></h3>
+                </div>
+                <div class="side-menu__activities">
+                    <div class="side-menu__btn-wrapper">
+                        <button class="side-menu__btn-back">
+                            <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+                        </button>
+                    </div>
+                    <ul class="side-menu__plan-inner"></ul>
+                    <form class="add-event-form">
+                        <div class="add-event-form__container">
+                            <div class="add-event-form__item">
+                                <input type="text" name="title" id="title" placeholder="Title">
+                            </div>
+                            <div class="add-event-form__item">
+                                <input type="text" name="localization" id="localization" placeholder="Localization">
+                            </div>
+                            <div class="add-event-form__item">
+                                <label for="time">Time</label>
+                                <input type="time" name="time" id="time" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Add" class="add-event-form__btn">
+                        </div>
+                    </form>
+                    <form class="update-event-form">
+                        <div class="update-event-form__container">
+                            <div class="update-event-form__item">
+                                <input type="text" name="title" id="title" placeholder="Title"
+                                    class="update-form__title">
+                            </div>
+                            <div class="update-event-form__item">
+                                <input type="text" name="localization" id="localization" placeholder="Localization"
+                                    class="update-form__localization">
+                            </div>
+                            <div class="update-event-form__item">
+                                <label for="time">Time</label>
+                                <input type="time" name="time" id="time" placeholder="Time" class="update-form__time">
+                            </div>
+                        </div>
+                        <div class="update-event-form__btn-ctn">
+                            <input type="submit" value="Edit" class="update-event-form__edit">
+                            <input type="submit" value="Delete" class="update-event-form__delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="side-menu__footer">
+                <button class="side-menu__btn">+</button>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="src/app.js"></script>
+</body>
+
+</html>
