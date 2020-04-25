@@ -51,7 +51,7 @@ body {
 }
 .side-menu__btn-back {
   display: none;
-  margin-bottom: 1rem;
+  margin-top: 0.4rem;
   color: white;
   background-color: #ffb4a2;
   border: none;
@@ -256,6 +256,7 @@ body {
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .add-event-form__container {
   display: flex;
@@ -263,7 +264,7 @@ body {
   width: 100%;
 }
 .add-event-form__item {
-  padding: 1rem;
+  padding: 1rem 0.2rem 1rem 0.2rem;
   display: flex;
   align-items: center;
 }
@@ -286,14 +287,15 @@ body {
 }
 
 .alert {
-  position: absolute;
+  margin-top: 1rem;
+  width: 60%;
   background-color: #ff4848;
   padding: 1rem 4rem;
   text-align: center;
-  top: 105px;
 }
 
 .update-event-form {
+  align-items: center;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -316,6 +318,7 @@ body {
   padding: 0.25rem;
 }
 .update-event-form__edit {
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   background-color: #ffb4a2;
@@ -325,13 +328,14 @@ body {
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
 }
 .update-event-form__delete {
+  border-radius: 5px;
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   border: none;
   cursor: pointer;
   background-color: #ffb4a2;
   margin-top: 1rem;
-  width: 30%;
+  width: 60%;
   padding: 0.5rem;
 }
 

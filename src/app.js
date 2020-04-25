@@ -1,6 +1,3 @@
-import UICtrl from "./ui.js";
-const ui = new UICtrl();
-
 const date = new Date();
 let actualMonth = date.getMonth();
 let actualYear = date.getFullYear();
@@ -19,9 +16,8 @@ const updateForm = document.querySelector(".update-event-form");
 const backBtn = document.querySelector(".side-menu__btn-back");
 const addForm = document.querySelector(".add-event-form");
 
-const daysInMonth = (month) => {
-  const now = new Date();
-  return new Date(actualYear, now.getMonth() + 1 + month, 0).getDate();
+const daysInMonth = () => {
+  return new Date(actualYear, actualMonth, 0).getDate();
 };
 
 const updateCalendar = (days) => {
@@ -207,8 +203,8 @@ const editEventState = (item) => {
   const timeField = document.querySelector(".update-form__time");
 
   fetch(`http://localhost:3000/events/${item.id}`)
-    .then((res) => res.json())
-    .then((data) => {
+    .then(res => res.json())
+    .then(data => {
       console.log(data.hour);
       titleField.value = data.name;
       localField.value = data.localization;
@@ -252,7 +248,6 @@ const updateEvent = (e, id) => {
 
 const getEventsFromDb = async () => {
   cleanPlan();
-
   try {
     const response = await fetch("http://localhost:3000/events");
     const resData = await response.json();
@@ -269,7 +264,7 @@ const getEventsFromDb = async () => {
   }
 };
 
-const addEventToDb = async (data) => {
+const addEventToDb = async data => {
   const response = await fetch("http://localhost:3000/events", {
     method: "POST",
     headers: {
@@ -281,7 +276,7 @@ const addEventToDb = async (data) => {
   return resData;
 };
 
-const moveEventToAnotherDay = async (item) => {
+const moveEventToAnotherDay = async item => {
   const response = await fetch(`http://localhost:3000/events/${item.id}`, {
     method: "PATCH",
     headers: {
@@ -306,21 +301,18 @@ const addEventState = () => {
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    const plan = document.querySelector(".side-menu");
-    const day = document.querySelector(".side-menu__content");
-
     const eventName = document.querySelector("#title").value;
     const eventLoc = document.querySelector("#localization").value;
     const eventTime = document.querySelector("#time").value;
 
-    if (eventName === "" && eventLoc === "" && eventTime === "") {
+    if (eventName === "" || eventLoc === "" || eventTime === "") {
       const div = document.createElement("div");
       const p = document.createElement("p");
       div.className = "alert";
 
       p.innerText = "Fill in all fields";
       div.appendChild(p);
-      plan.insertBefore(div, day);
+      addForm.appendChild(div)
 
       setTimeout(() => {
         div.remove();
@@ -453,7 +445,7 @@ const loadEvents = () => {
       actualYear++;
     }
     updateCalendar(daysInMonth(counter));
-    updateMonth(actualMonth, actualYear);
+    updateMonth(actualMonth);
   });
 
   backwardToggle.addEventListener("click", () => {
@@ -464,6 +456,6 @@ const loadEvents = () => {
       actualYear--;
     }
     updateCalendar(daysInMonth(counter));
-    updateMonth(actualMonth, actualYear);
+    updateMonth(actualMonth);
   });
 })();
